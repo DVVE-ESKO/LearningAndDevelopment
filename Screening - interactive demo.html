@@ -1890,6 +1890,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 })();
 &lt;/script&gt;
 &lt;div id=&quot;screening-basics&quot;&gt;
+  &lt;header class=&quot;esko-heading&quot;&gt;&lt;div class=&quot;eyebrow&quot;&gt;ARTPRO+ · LEARNING LAB&lt;/div&gt;&lt;h2&gt;What is screening?&lt;/h2&gt;&lt;/header&gt;
   &lt;div class=&quot;viz-controls&quot;&gt;&lt;label class=&quot;form-label&quot; for=&quot;tone&quot;&gt;Nominal ink coverage: &lt;span id=&quot;tone-value&quot; class=&quot;tabular-nums&quot;&gt;40%&lt;/span&gt;&lt;input class=&quot;form-range&quot; id=&quot;tone&quot; type=&quot;range&quot; min=&quot;5&quot; max=&quot;75&quot; value=&quot;40&quot; step=&quot;5&quot;&gt;&lt;/label&gt;&lt;/div&gt;
   &lt;div class=&quot;screen-pair&quot;&gt;
     &lt;div&gt;&lt;h3&gt;Dots seen from a distance&lt;/h3&gt;&lt;svg class=&quot;tone-field&quot; id=&quot;fine&quot; viewBox=&quot;0 0 240 160&quot; role=&quot;img&quot; aria-label=&quot;Fine halftone pattern that blends into a tint&quot;&gt;&lt;defs&gt;&lt;pattern id=&quot;fine-pattern&quot; width=&quot;3&quot; height=&quot;3&quot; patternUnits=&quot;userSpaceOnUse&quot;&gt;&lt;circle id=&quot;fine-dot&quot; cx=&quot;1.5&quot; cy=&quot;1.5&quot; r=&quot;1.07&quot; fill=&quot;#000000&quot;/&gt;&lt;/pattern&gt;&lt;/defs&gt;&lt;rect width=&quot;240&quot; height=&quot;160&quot; fill=&quot;#ffffff&quot;/&gt;&lt;rect width=&quot;240&quot; height=&quot;160&quot; fill=&quot;url(#fine-pattern)&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
@@ -1899,16 +1900,21 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;div class=&quot;text-small&quot;&gt;Schematic AM screening · One ink · Not a print proof&lt;/div&gt;
 &lt;/div&gt;
 &lt;style&gt;
-#screening-basics{display:grid;gap:calc(var(--font-size-base)*1);color:#000000;background:#ffffff;--foreground:#000000;--muted-foreground:#333333;--background:#ffffff;--primary:#000000;--primary-foreground:#ffffff;--border:#777777;--input:#777777;color-scheme:light}
-#screening-basics .screen-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(var(--font-size-base)*1)}
-#screening-basics .tone-field{width:100%;display:block;margin-top:calc(var(--font-size-base)*.5);color:#000000;background:#ffffff;--foreground:#000000;--muted-foreground:#333333;--background:#ffffff;--primary:#000000;--primary-foreground:#ffffff;--border:#777777;--input:#777777;color-scheme:light}
+#screening-basics{display:grid;gap:16px;color:#000;background:#fff;--font-size-base:15px;--foreground:#000;--muted-foreground:#44594f;--background:#fff;--primary:#007f58;--primary-foreground:#fff;--border:#777;--input:#777;color-scheme:light;font-family:Arial,Helvetica,sans-serif}
+#screening-basics .esko-heading{border-left:5px solid #007f58;padding:18px 22px;background:#eef7f2;display:grid;gap:8px}
+#screening-basics .eyebrow{color:#007f58;letter-spacing:1.5px}
+#screening-basics h2,#screening-basics h3{margin:0;color:#003e35;font-weight:500}
+#screening-basics .screen-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+#screening-basics .tone-field{width:100%;display:block;margin-top:8px;background:#fff}
+#screening-basics label,#screening-basics span,#screening-basics .viz-row{color:#000}
+#screening-basics .text-small{color:#44594f}
+#screening-basics #screen-label{padding:12px 0;border-bottom:1px solid #dae8e0;font-variant-numeric:tabular-nums}
+#screening-basics input[type=&quot;range&quot;]{appearance:auto;-webkit-appearance:auto;accent-color:#007f58;background:transparent;color:#000;width:100%;height:28px}
+#screening-basics input[type=&quot;range&quot;]::-webkit-slider-runnable-track{height:6px;background:#b7cbc1;border-radius:3px}
+#screening-basics input[type=&quot;range&quot;]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:#007f58;border:2px solid #fff;margin-top:-7px}
+#screening-basics input[type=&quot;range&quot;]::-moz-range-track{height:6px;background:#b7cbc1;border-radius:3px}
+#screening-basics input[type=&quot;range&quot;]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#007f58;border:2px solid #fff}
 @media(max-width:480px){#screening-basics .screen-pair{grid-template-columns:1fr}}
-#screening-basics h3,#screening-basics label,#screening-basics span,#screening-basics .text-small,#screening-basics .viz-row{color:#000000}
-#screening-basics input[type=&quot;range&quot;]{appearance:auto;-webkit-appearance:auto;accent-color:#000000; background:transparent;color:#000000;width:100%;height:28px}
-#screening-basics input[type=&quot;range&quot;]::-webkit-slider-runnable-track{height:6px;background:#999999;border-radius:3px}
-#screening-basics input[type=&quot;range&quot;]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:#000000;border:2px solid #ffffff;margin-top:-7px}
-#screening-basics input[type=&quot;range&quot;]::-moz-range-track{height:6px;background:#999999;border-radius:3px}
-#screening-basics input[type=&quot;range&quot;]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#000000;border:2px solid #ffffff}
 &lt;/style&gt;
 &lt;script&gt;
 (()=&gt;{const root=document.getElementById(&#x27;screening-basics&#x27;);const slider=root.querySelector(&#x27;#tone&#x27;);function draw(v){const coverage=Number(v)/100;root.querySelector(&#x27;#tone-value&#x27;).textContent=v+&#x27;%&#x27;;root.querySelector(&#x27;#fine-dot&#x27;).setAttribute(&#x27;r&#x27;,3*Math.sqrt(coverage/Math.PI));root.querySelector(&#x27;#large-dot&#x27;).setAttribute(&#x27;r&#x27;,20*Math.sqrt(coverage/Math.PI));root.querySelector(&#x27;#screen-label&#x27;).textContent=v+&#x27;% coverage · Same spacing, changing dot size&#x27;;slider.value=v;}const saved=window.openai?.widgetState?.modelContent?.coverage;draw(saved&gt;=5&amp;&amp;saved&lt;=75?saved:40);slider.addEventListener(&#x27;input&#x27;,()=&gt;{draw(slider.value);window.openai?.setWidgetState({modelContent:{coverage:Number(slider.value)},privateContent:null}).catch(()=&gt;{});});window.addEventListener(&#x27;openai:set_globals&#x27;,event=&gt;{const v=event.detail?.globals?.widgetState?.modelContent?.coverage;if(v&gt;=5&amp;&amp;v&lt;=75)draw(v);});})();
