@@ -1900,7 +1900,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;div class=&quot;text-small&quot;&gt;Schematic AM screening · One ink · Not a print proof&lt;/div&gt;
 &lt;/div&gt;
 &lt;style&gt;
-#screening-basics{--esko-lime:#A6C044;--esko-graphite:#444B53;--esko-dark:#303336;--esko-light:#F5F7FF;--font-size-base:16px;--foreground:#303336;--muted-foreground:#576575;--background:#fff;--primary:#A6C044;--primary-foreground:#303336;--border:#576575;--input:#576575;display:grid;gap:24px;color:#303336;background:transparent;color-scheme:light;font-family:&quot;TT Commons Pro&quot;,Arial,sans-serif;font-size:16px;line-height:1.6}
+#screening-basics{--esko-lime:#A6C044;--esko-graphite:#444B53;--esko-dark:#303336;--esko-light:#F5F7FF;--font-size-base:16px;--foreground:#303336;--muted-foreground:#576575;--background:#fff;--primary:#A6C044;--primary-foreground:#303336;--border:#576575;--input:#576575;box-sizing:border-box;width:100%;padding:24px;display:grid;gap:24px;color:#303336;background:transparent;color-scheme:light;font-family:&quot;TT Commons Pro&quot;,Arial,sans-serif;font-size:16px;line-height:1.6}
 #screening-basics .esko-heading{border-left:4px solid #A6C044;padding:16px 24px;background:#F5F7FF;display:grid;gap:8px}
 #screening-basics .eyebrow{font-family:&quot;TT Commons Pro&quot;,Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:1.2px;color:#444B53}
 #screening-basics h2{font-family:&quot;Tiempos Headline&quot;,TiemposHeadline,&quot;Times New Roman&quot;,serif;font-weight:600;font-size:32px;line-height:1.2;margin:0;color:#303336}
@@ -1916,7 +1916,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 #screening-basics input[type=&quot;range&quot;]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:#A6C044;border:2px solid #303336;margin-top:-9px}
 #screening-basics input[type=&quot;range&quot;]::-moz-range-track{height:6px;background:#576575;border-radius:3px}
 #screening-basics input[type=&quot;range&quot;]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#A6C044;border:2px solid #303336}
-@media(max-width:480px){#screening-basics .screen-pair{grid-template-columns:1fr}#screening-basics h2{font-size:24px}#screening-basics .esko-heading{padding:16px}}
+@media(max-width:480px){#screening-basics{padding:16px}#screening-basics .screen-pair{grid-template-columns:1fr}#screening-basics h2{font-size:24px}#screening-basics .esko-heading{padding:16px}}
 &lt;/style&gt;
 &lt;script&gt;
 (()=&gt;{const root=document.getElementById(&#x27;screening-basics&#x27;);const slider=root.querySelector(&#x27;#tone&#x27;);function draw(v){const coverage=Number(v)/100;root.querySelector(&#x27;#tone-value&#x27;).textContent=v+&#x27;%&#x27;;root.querySelector(&#x27;#fine-dot&#x27;).setAttribute(&#x27;r&#x27;,3*Math.sqrt(coverage/Math.PI));root.querySelector(&#x27;#large-dot&#x27;).setAttribute(&#x27;r&#x27;,20*Math.sqrt(coverage/Math.PI));root.querySelector(&#x27;#screen-label&#x27;).textContent=v+&#x27;% coverage · Same spacing, changing dot size&#x27;;slider.value=v;}const saved=window.openai?.widgetState?.modelContent?.coverage;draw(saved&gt;=5&amp;&amp;saved&lt;=75?saved:40);slider.addEventListener(&#x27;input&#x27;,()=&gt;{draw(slider.value);window.openai?.setWidgetState({modelContent:{coverage:Number(slider.value)},privateContent:null}).catch(()=&gt;{});});window.addEventListener(&#x27;openai:set_globals&#x27;,event=&gt;{const v=event.detail?.globals?.widgetState?.modelContent?.coverage;if(v&gt;=5&amp;&amp;v&lt;=75)draw(v);});})();
