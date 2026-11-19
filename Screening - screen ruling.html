@@ -6,7 +6,7 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://persistent.oaistatic.com/plugins/visualize/; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://persistent.oaistatic.com/plugins/visualize/charts/; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Screen Ruling</title>
-<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+<style>:root{color-scheme:light;background:transparent}html,body{margin:0;padding:0;background:transparent}body{box-sizing:border-box}iframe{display:block;width:100%;height:100vh;margin:0;border:0;background:transparent}</style>
 
 </head>
 <body>
@@ -1523,7 +1523,7 @@ svg.lucide {
 }
 
 html&gt;body{padding:0}&lt;/style&gt;
-&lt;/head&gt;
+&lt;style&gt;:root{color-scheme:light!important;background:transparent!important}html,body{margin:0!important;padding:0!important;background:transparent!important}&lt;/style&gt;&lt;/head&gt;
 &lt;body&gt;
 &lt;script type=&quot;application/json&quot; id=&quot;codex-visualization-widget-state&quot;&gt;__CODEX_VISUALIZATION_WIDGET_STATE__&lt;/script&gt;
 &lt;script&gt;(() =&gt; {
@@ -1890,30 +1890,38 @@ html&gt;body{padding:0}&lt;/style&gt;
 })();
 &lt;/script&gt;
 &lt;div id=&quot;screen-ruling-demo&quot;&gt;
-&lt;header&gt;&lt;div class=&quot;eyebrow&quot;&gt;ARTPRO+ · LEARNING LAB&lt;/div&gt;&lt;h2&gt;Screen ruling&lt;/h2&gt;&lt;/header&gt;
+&lt;header&gt;&lt;div class=&quot;eyebrow&quot;&gt;ARTPRO+ · SCREENING&lt;/div&gt;&lt;h2&gt;Screen ruling&lt;/h2&gt;&lt;/header&gt;
 &lt;div class=&quot;viz-controls&quot;&gt;&lt;label class=&quot;form-label&quot; for=&quot;ruling-control&quot;&gt;Screen ruling: &lt;output id=&quot;ruling-value&quot; class=&quot;tabular-nums&quot;&gt;150 LPI&lt;/output&gt;&lt;input class=&quot;form-range&quot; id=&quot;ruling-control&quot; type=&quot;range&quot; min=&quot;85&quot; max=&quot;200&quot; step=&quot;5&quot; value=&quot;150&quot;&gt;&lt;/label&gt;&lt;/div&gt;
-&lt;div class=&quot;ruling-pair&quot;&gt;&lt;section&gt;&lt;h3&gt;Same print area&lt;/h3&gt;&lt;canvas id=&quot;ruling-overview&quot; width=&quot;1000&quot; height=&quot;600&quot; role=&quot;img&quot; aria-label=&quot;A nominal one-inch wide AM halftone patch with a fixed highlighted detail&quot;&gt;&lt;/canvas&gt;&lt;div class=&quot;text-small&quot;&gt;Nominal width: 1 inch · Green box: detail&lt;/div&gt;&lt;/section&gt;&lt;section&gt;&lt;h3&gt;Same detail enlarged&lt;/h3&gt;&lt;canvas id=&quot;ruling-detail&quot; width=&quot;1000&quot; height=&quot;600&quot; role=&quot;img&quot; aria-label=&quot;Fixed-size detail showing more smaller dots as screen ruling increases&quot;&gt;&lt;/canvas&gt;&lt;div class=&quot;text-small&quot;&gt;Nominal detail width: 0.12 inch&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;
+&lt;div class=&quot;ruling-pair&quot;&gt;&lt;section&gt;&lt;h3&gt;Same print area&lt;/h3&gt;&lt;canvas id=&quot;ruling-overview&quot; width=&quot;1000&quot; height=&quot;600&quot; role=&quot;img&quot; aria-label=&quot;A nominal one-inch wide AM halftone patch with a fixed highlighted detail&quot;&gt;&lt;/canvas&gt;&lt;div class=&quot;text-small&quot;&gt;Nominal width: 1 inch · Lime frame: detail&lt;/div&gt;&lt;/section&gt;&lt;section&gt;&lt;h3&gt;Same detail enlarged&lt;/h3&gt;&lt;canvas id=&quot;ruling-detail&quot; width=&quot;1000&quot; height=&quot;600&quot; role=&quot;img&quot; aria-label=&quot;Fixed-size detail showing more smaller dots as screen ruling increases&quot;&gt;&lt;/canvas&gt;&lt;div class=&quot;text-small&quot;&gt;Nominal detail width: 0.12 inch&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;
 &lt;div id=&quot;ruling-status&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;text-small&quot;&gt;Schematic AM screen · 40% nominal ink coverage · Not to physical screen scale · Not a print proof&lt;/div&gt;
 &lt;/div&gt;
 &lt;style&gt;
-#screen-ruling-demo{--primary:#007f58;--primary-foreground:#fff;--foreground:#000;--background:#fff;--muted-foreground:#44594f;--font-size-base:15px;display:grid;gap:16px;background:#fff;color:#000;color-scheme:light;font-family:Arial,Helvetica,sans-serif}
-#screen-ruling-demo header{padding:18px 22px;border-left:5px solid #007f58;background:#eef7f2;display:grid;gap:8px}
-#screen-ruling-demo .eyebrow{color:#007f58;letter-spacing:1.5px}
-#screen-ruling-demo h2{color:#003e35;margin:0;font-weight:500}
-#screen-ruling-demo h3{color:#003e35;margin:0 0 8px;font-weight:500}
-#screen-ruling-demo .ruling-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-#screen-ruling-demo canvas{display:block;width:100%;height:auto;background:#fff}
-#screen-ruling-demo input[type=range]{appearance:auto;accent-color:#007f58;width:100%;height:28px;color-scheme:light}
-#screen-ruling-demo label,#screen-ruling-demo output{color:#000}
-#screen-ruling-demo .text-small{color:#44594f}
-@media(max-width:480px){#screen-ruling-demo .ruling-pair{grid-template-columns:1fr}}
+#screen-ruling-demo{--esko-lime:#A6C044;--esko-graphite:#444B53;--esko-dark:#303336;--esko-light:#F5F7FF;--font-size-base:16px;--foreground:#303336;--muted-foreground:#576575;--background:#fff;--primary:#A6C044;--primary-foreground:#303336;--border:#576575;--input:#576575;box-sizing:border-box;width:100%;padding:24px;display:grid;gap:24px;color:#303336;background:transparent;color-scheme:light;font-family:&quot;TT Commons Pro&quot;,Arial,sans-serif;font-size:16px;line-height:1.6}
+#screen-ruling-demo header{border-left:4px solid #A6C044;padding:16px 24px;background:#F5F7FF;display:grid;gap:8px}
+#screen-ruling-demo .eyebrow{font-family:&quot;TT Commons Pro&quot;,Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:1.2px;color:#444B53}
+#screen-ruling-demo h2{font-family:&quot;Tiempos Headline&quot;,TiemposHeadline,&quot;Times New Roman&quot;,serif;font-weight:600;font-size:32px;line-height:1.2;margin:0;color:#303336}
+#screen-ruling-demo h3{font-family:&quot;TT Commons Pro&quot;,Arial,sans-serif;font-weight:500;font-size:18px;line-height:1.4;margin:0;color:#303336}
+#screen-ruling-demo .ruling-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+#screen-ruling-demo canvas{width:100%;display:block;margin-top:16px;background:#fff}
+#screen-ruling-demo label,#screen-ruling-demo span,#screen-ruling-demo .viz-row{color:#303336}
+#screen-ruling-demo .text-small{font-size:12px;line-height:1.8;color:#576575}
+#screen-ruling-demo #ruling-value{font-weight:500;font-variant-numeric:tabular-nums}
+#screen-ruling-demo #ruling-status{padding:16px 0;border-top:1px solid #E1E4E6;font-variant-numeric:tabular-nums;font-size:14px}
+#screen-ruling-demo input[type=&quot;range&quot;]{appearance:none;-webkit-appearance:none;accent-color:#A6C044;background:transparent;color:#303336;width:100%;height:44px;margin:8px 0 0;display:block;cursor:ew-resize}
+#screen-ruling-demo input[type=&quot;range&quot;]::-webkit-slider-runnable-track{height:6px;background:#576575;border-radius:3px}
+#screen-ruling-demo input[type=&quot;range&quot;]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:#A6C044;border:2px solid #303336;margin-top:-9px}
+#screen-ruling-demo input[type=&quot;range&quot;]::-moz-range-track{height:6px;background:#576575;border-radius:3px}
+#screen-ruling-demo input[type=&quot;range&quot;]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#A6C044;border:2px solid #303336}
+@media(max-width:480px){#screen-ruling-demo{padding:16px}#screen-ruling-demo .ruling-pair{grid-template-columns:1fr}#screen-ruling-demo h2{font-size:24px}#screen-ruling-demo header{padding:16px}}
+
+#screen-ruling-demo output{color:#303336}
 &lt;/style&gt;
 &lt;script&gt;
 (()=&gt;{
 const root=document.getElementById(&#x27;screen-ruling-demo&#x27;);const slider=root.querySelector(&#x27;#ruling-control&#x27;);
 function patch(canvas,lpi,inchWidth){const ctx=canvas.getContext(&#x27;2d&#x27;),w=canvas.width,h=canvas.height,spacing=w/(lpi*inchWidth),radius=spacing*Math.sqrt(.4/Math.PI);ctx.fillStyle=&#x27;#fff&#x27;;ctx.fillRect(0,0,w,h);ctx.fillStyle=&#x27;#000&#x27;;for(let y=h/2-Math.ceil(h/spacing/2)*spacing;y&lt;h+spacing;y+=spacing){for(let x=w/2-Math.ceil(w/spacing/2)*spacing;x&lt;w+spacing;x+=spacing){ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fill();}}return ctx;}
-function draw(value){let v=Number(value);if(!Number.isFinite(v)||v&lt;85||v&gt;200)v=150;slider.value=v;root.querySelector(&#x27;#ruling-value&#x27;).textContent=v+&#x27; LPI&#x27;;const overview=root.querySelector(&#x27;#ruling-overview&#x27;);const ctx=patch(overview,v,1);patch(root.querySelector(&#x27;#ruling-detail&#x27;),v,.12);ctx.strokeStyle=&#x27;#fff&#x27;;ctx.lineWidth=10;ctx.strokeRect(440,264,120,72);ctx.strokeStyle=&#x27;#007f58&#x27;;ctx.lineWidth=6;ctx.strokeRect(440,264,120,72);root.querySelector(&#x27;#ruling-status&#x27;).textContent=v+&#x27; lines per inch · Same area · Same 40% coverage&#x27;;}
+function draw(value){let v=Number(value);if(!Number.isFinite(v)||v&lt;85||v&gt;200)v=150;slider.value=v;root.querySelector(&#x27;#ruling-value&#x27;).textContent=v+&#x27; LPI&#x27;;const overview=root.querySelector(&#x27;#ruling-overview&#x27;);const ctx=patch(overview,v,1);patch(root.querySelector(&#x27;#ruling-detail&#x27;),v,.12);ctx.strokeStyle=&#x27;#303336&#x27;;ctx.lineWidth=10;ctx.strokeRect(440,264,120,72);ctx.strokeStyle=&#x27;#A6C044&#x27;;ctx.lineWidth=6;ctx.strokeRect(440,264,120,72);root.querySelector(&#x27;#ruling-status&#x27;).textContent=v+&#x27; lines per inch · Same area · Same 40% coverage&#x27;;}
 draw(window.openai?.widgetState?.modelContent?.ruling??150);
 slider.addEventListener(&#x27;input&#x27;,()=&gt;{draw(slider.value);window.openai?.setWidgetState({modelContent:{ruling:Number(slider.value)},privateContent:null}).catch(()=&gt;{});});
 window.addEventListener(&#x27;openai:set_globals&#x27;,e=&gt;draw(e.detail?.globals?.widgetState?.modelContent?.ruling??150));
